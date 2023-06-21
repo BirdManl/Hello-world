@@ -2,26 +2,43 @@
 Мое задание на практику
 Данные для новой ветки
 Код для выполнения задания 2:
-import random
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <vector>
 
-def main():
-p = 7
-q = 17
-n = (p - 1) * (q - 1)
-e = random.randint(2, n)
-count = 0
-d_set = list()
-num = 1
-while count < 5:
-if (num * e) % n == 1:
-d_set.append(num)
-count += 1
-num += 1
-print(e)
-print(d_set)
+int main() {
+    int p = 7;
+    int q = 17;
+    int n = (p - 1) * (q - 1);
+    srand(time(NULL));
+    int e = rand() % (n - 2) + 2;
+    int count = 0;
+    std::vector<int> d_set;
+    int num = 1;
+    while (count < 5) {
+        if ((num * e) % n == 1) {
+            d_set.push_back(num);
+            count++;
+        }
+        num++;
+    }
+    std::cout << e << std::endl;
+    for (int i = 0; i < d_set.size(); i++) {
+        std::cout << d_set[i] << " ";
+    }
+    std::cout << std::endl;
+    return 0;
+}
 
-if __name__ == "__main__":
-main()
+
+
+
+
+
+
+
+
 
 
 
